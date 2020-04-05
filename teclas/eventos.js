@@ -7,23 +7,47 @@ var teclas = {
 
 console.log(teclas);
 
-document.addEventListener("keyup", dibujarTeclado);
+document.addEventListener("keydown", dibujarTeclado);
+var cuadrito = document.getElementById("area_de_dibujo");
+var papel = cuadrito.getContext("2d");
+var x = 100;
+var y = 100;
+
+dibujarLinea("red", x-1, y-1, x+1, y+1, papel);
+
+function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal, lienzo)
+{
+    lienzo.beginPath();
+    lienzo.strokeStyle = color;
+    lienzo.lineWidth = 3; //grueso de linea
+    lienzo.moveTo(xinicial,yinicial);
+    lienzo.lineTo(xfinal,yfinal);
+    lienzo.stroke();
+    lienzo.closePath();
+}
 
 function dibujarTeclado(evento)
 {
+    var colorcito = "brown";
+    var movimiento = 1;
+
     switch(evento.keyCode)
     {
         case teclas.UP:
-            console.log("arriba");
+            dibujarLinea(colorcito, x, y, x, y - movimiento, papel);
+            y = y - movimiento;
             break;
         case teclas.DOWN:
-            console.log("abajo")
+            dibujarLinea(colorcito, x, y, x, y + movimiento, papel);
+                y = y + movimiento;
             break;
         case teclas.LEFT:
-            console.log("izquierda");
+            dibujarLinea(colorcito, x, y, x - movimiento, y, papel);
+                x = x - movimiento;
             break;
         case teclas.RIGHT:
-            console.log("derecha");
+            dibujarLinea(colorcito, x, y, x + movimiento, y, papel);
+                x = x + movimiento;
             break;
             default:
                 console.log("Otra tecla");
