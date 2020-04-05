@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizarra interactiva</title>
+    <style>
+        body
+        {
+            background-color: #DFF8F9;
+            color: black;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+    <h1>Bienvenido a tu Pizarra interactiva</h1>
+</head>
+<body>
+    <p>
+        Sigue la Instrucciones:
+        1. Selecciona el número correspondiente al color que quieras.
+        2.Selecciona el grosor del lapiz.
+        3.Mueve el mouse para hacer tu dibujo, oprimiendo click.
+        4. Repite las veces que quieras, jugando con los colores y el grosor del lapiz. 
+        5. BORRA todo y comienza de nuevo.<br><br>
+    </p>
+    <script>
+        document.write("___1. amarillo___2. azul___3. rojo___4. verde___5. aguamarina___6. violeta___7. naranja___8. fucsia___9. cafe___10. negro");
+    </script>
+    Elige tu color: <input type="number" id="todos_colores"/><br><br>
+    ___1. es 2___2. es 4___3. es 6___4. es 8___5. es 10.
+    Elige el grosor del lapiz <input type="number" id="grosor_linea">
+    <input type="button" value="Borrar todo" id="boton_borrar" /><br>
+    <canvas width="1300" height="650" id="area_de_dibujo"></canvas>
+    <script src="pizarra.js"></script>
+</body>
+</html>
