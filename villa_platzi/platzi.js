@@ -2,23 +2,28 @@ document.addEventListener ("keyup", moverCerdo);
 var vp = document.getElementById ("villaplatzi");
 var papel = vp.getContext ("2d");
 
-var teclas = { LEFT: 37, UP: 38, RIGHT: 39, DOWN: 40};
+var teclas = 
+{   LEFT: 37, 
+    UP: 38, 
+    RIGHT: 39, 
+    DOWN: 40
+};
 
-var cantidadVacas = aleatorio (1, 5);
+var cantidadVacas = aleatorio (1, 10);
 console.log("cantidad de vacas = " + cantidadVacas);
 var cantidadCerdos = 1;
 var xci = 210;
 var yci = 210;
-var xv1 = aleatorio (0, 5) * 80;
-var yv1 = aleatorio (0, 5) * 80;
-var xv2 = aleatorio (0, 5) * 80;
-var yv2 = aleatorio (0, 5) * 80;
-var xv3 = aleatorio (0, 5) * 80;
-var yv3 = aleatorio (0, 5) * 80;
-var xv4 = aleatorio (0, 5) * 80;
-var yv4 = aleatorio (0, 5) * 80;
-var xv5 = aleatorio (0, 5) * 80;
-var yv5 = aleatorio (0, 5) * 80;
+var xvaca1 = aleatorio (0, 5) * 80;
+var yvaca1 = aleatorio (0, 5) * 80;
+var xvaca2 = aleatorio (0, 5) * 80;
+var yvaca2 = aleatorio (0, 5) * 80;
+var xvaca3 = aleatorio (0, 5) * 80;
+var yvaca3 = aleatorio (0, 5) * 80;
+var xvaca4 = aleatorio (0, 5) * 80;
+var yvaca4 = aleatorio (0, 5) * 80;
+var xvaca5 = aleatorio (0, 5) * 80;
+var yvaca5 = aleatorio (0, 5) * 80;
 
 var fondo = {
 url: "./tile.png",
@@ -75,23 +80,23 @@ if (vaca.cargaOK)
 {
 if (cantidadVacas > 0)
 {
-papel.drawImage(vaca.imagen, xv1, yv1);
+papel.drawImage(vaca.imagen, xvaca1, yvaca1);
 }
 if (cantidadVacas > 1)
 {
-papel.drawImage(vaca.imagen, xv2, yv2);
+papel.drawImage(vaca.imagen, xvaca2, yvaca2);
 }
 if (cantidadVacas > 2)
 {
-papel.drawImage(vaca.imagen, xv3, yv3);
+papel.drawImage(vaca.imagen, xvaca3, yvaca3);
 }
 if (cantidadVacas > 3)
 {
-papel.drawImage(vaca.imagen, xv4, yv4);
+papel.drawImage(vaca.imagen, xvaca4, yvaca4);
 }
 if (cantidadVacas > 4)
 {
-papel.drawImage(vaca.imagen, xv5, yv5);
+papel.drawImage(vaca.imagen, xvaca5, yvaca5);
 }
 }
 if (cerdo.cargaOK)
@@ -102,7 +107,7 @@ papel.drawImage(cerdo.imagen, xc, yc);
 
 function moverCerdo(evento)
 {
-var movimiento = 20;
+var movimiento = 10;
 switch (evento.keyCode) {
 case teclas.LEFT:
 dibujar (xci - movimiento, yci);
