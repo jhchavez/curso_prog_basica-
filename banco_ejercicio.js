@@ -46,4 +46,4 @@ functiontransferir(cliente, destino, horaTransferencia, transaccion)
 
 }
 
-console.log(transferir(true, true, 13, 1000000))```
+console.log(transferir(true, true, 13, 1000000))
